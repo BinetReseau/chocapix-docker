@@ -1,0 +1,6 @@
+[submodule "server"]
+	path = server
+	url = https://github.com/Nadrieril/bars-django
+[submodule "client"]
+	path = client
+	url = https://github.com/Nadrieril/bars-angular
