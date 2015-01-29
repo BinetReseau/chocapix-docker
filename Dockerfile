@@ -24,6 +24,8 @@ RUN pip install -r /tmp/requirements.txt
 ADD supervisord.conf /etc/supervisord.conf
 ADD nginx.conf /etc/nginx/nginx.conf
 ADD . /srv/app/
+RUN sed -i 's/\(APIURL.url\).\+/\1 = "api";/' app/app.js
+RUN gulp build
 
 WORKDIR /srv/app/server
 sed -i 's/bars_django\.settings\.dev_local/bars_django.settings.dev_server/' bars_django/wsgi.py
