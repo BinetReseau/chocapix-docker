@@ -1,7 +1,11 @@
 FROM nodesource/node:wheezy
 MAINTAINER Nadrieril "nadrieril@eleves.polytechnique.fr"
 
-RUN apt-get -qq update && apt-get install -y python-pip supervisor nginx gunicorn
+ENV HTTP_PROXY http://kuzh.polytechnique.fr:8080
+ENV http_proxy http://kuzh.polytechnique.fr:8080
+ENV https_proxy http://kuzh.polytechnique.fr:8080
+
+RUN apt-get update && apt-get install -y python-pip supervisor nginx gunicorn
 # RUN pip install gunicorn
 RUN pip install supervisor-stdout
 RUN npm install -g npm
