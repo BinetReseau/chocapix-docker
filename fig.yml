@@ -1,0 +1,26 @@
+db:
+  build: db
+  environment:
+    - MYSQL_ROOT_PASSWORD=root  
+    - MYSQL_DATABASE=django
+
+client:
+  build: client
+  volumes:
+    - /app/client/dist
+
+api:
+  build: server
+  links:
+    - "db:mysqldb"
+  volumes:
+    - /app/server/static
+    - /app/server/sock
+
+app:
+  build: .
+  volumes_from:
+    - client
+    - api
+  ports:
+    - "8000:8000"
