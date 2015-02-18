@@ -7,15 +7,14 @@ db:
 client:
   build: client
   volumes:
-    - /app/client/dist
+    - /srv/client
 
 api:
   build: server
   links:
     - "db:mysqldb"
   volumes:
-    - /app/server/static
-    - /app/server/sock
+    - /srv/server
 
 app:
   build: .
