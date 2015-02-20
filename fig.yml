@@ -14,7 +14,7 @@ api:
   links:
     - "db:mysqldb"
   volumes:
-    - /srv/server
+    - /srv/api
 
 app:
   build: .
