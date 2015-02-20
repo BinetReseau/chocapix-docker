@@ -16,10 +16,14 @@ api:
   volumes:
     - /srv/api
 
+openfoodfacts:
+  build: openfoodfacts
+
 app:
   build: .
   volumes_from:
     - client
     - api
+    - openfoodfacts
   ports:
     - "8000:8000"
