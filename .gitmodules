@@ -1,8 +1,8 @@
 [submodule "server"]
 	path = server
-	url = https://github.com/BR-Chocapix/chocapix-server
+	url = https://github.com/BinetReseau/chocapix-server
 	branch = master
 [submodule "client"]
 	path = client
-	url = https://github.com/BR-Chocapix/chocapix-client
+	url = https://github.com/BinetReseau/chocapix-client
 	branch = master
