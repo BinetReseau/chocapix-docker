@@ -1,6 +1,6 @@
 [submodule "server"]
 	path = server
-	url = https://github.com/Nadrieril/bars-django
+	url = https://github.com/BR-Chocapix/chocapix-server
 [submodule "client"]
 	path = client
-	url = https://github.com/Nadrieril/bars-angular
+	url = https://github.com/BR-Chocapix/chocapix-client
