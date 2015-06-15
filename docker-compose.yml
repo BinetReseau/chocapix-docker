@@ -1,7 +1,7 @@
 db:
   build: db
   environment:
-    - MYSQL_ROOT_PASSWORD=root  
+    - MYSQL_ROOT_PASSWORD=root
     - MYSQL_DATABASE=django
 
 client:
@@ -26,4 +26,4 @@ app:
     - api
     - openfoodfacts
   ports:
-    - "8000:8000"
+    - "9000:8000"
