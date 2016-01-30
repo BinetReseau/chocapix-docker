@@ -19,11 +19,15 @@ api:
 openfoodfacts:
   build: openfoodfacts
 
+ooshop:
+  build: ooshop
+
 app:
   build: .
   volumes_from:
     - client
     - api
     - openfoodfacts
+    - ooshop
   ports:
-    - "9000:8000"
+    - "1503:8000"
