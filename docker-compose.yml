@@ -22,6 +22,9 @@ openfoodfacts:
 ooshop:
   build: ooshop
 
+autoappro:
+  build: autoappro
+
 app:
   build: .
   volumes_from:
@@ -29,5 +32,6 @@ app:
     - api
     - openfoodfacts
     - ooshop
+    - autoappro
   ports:
     - "1503:8000"
