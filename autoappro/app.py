@@ -6,7 +6,7 @@ app = Flask(__name__)
 proxy = {'http': "http://kuzh.polytechnique.fr:8080"}
 
 
-# ===== OOSHOP =====
+# ===== OOSHOP (Carrefour) =====
 
 @app.route("/ooshop/<path:q>")
 def ooshop(q):
@@ -85,6 +85,14 @@ def picardProduct(id):
     return json.dumps(r.json()[0]['data'])
 
 
+
+# ===== HOURA (Cora) =====
+
+@app.route("/houra/<path:url>", methods=['POST'])
+def houraLogin(url):
+    headers = {'Content-Type':'application/json;charset=utf-8', 'X-Houra-Application-Id': 'Tiv1.1.2', 'X-Houra-Device-Uuid': 'uuid'}
+    rget = requests.post("http://www.houra.fr/ws_mobile/%s" % url, headers = headers, json = request.json, proxies=proxy)
+    return rget.text
 
 if __name__ == "__main__":
     app.run()
